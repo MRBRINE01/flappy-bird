@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://rirlv7h70kv0"]
+
+[ext_resource type="Script" uid="uid://cfoakfjvff13r" path="res://Script/bird.gd" id="1_i8bdw"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ygmfd"]
+
+[sub_resource type="GDScript" id="GDScript_i8bdw"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygmfd"]
+size = Vector2(30, 30)
+
+[node name="Bird" type="CharacterBody2D" unique_id=744231738]
+script = ExtResource("1_i8bdw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=241955127]
+scale = Vector2(30, 30)
+texture = SubResource("CanvasTexture_ygmfd")
+script = SubResource("GDScript_i8bdw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=945058494]
+shape = SubResource("RectangleShape2D_ygmfd")
